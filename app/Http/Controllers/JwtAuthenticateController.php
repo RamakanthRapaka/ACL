@@ -321,5 +321,10 @@ class JwtAuthenticateController extends ApiController {
             ]);
         }
     }
+    
+    public function partnersList(Request $request) {
+        
+        
+    }
 
 }
