@@ -20,42 +20,46 @@ Route::group(['middleware' => 'cors', 'prefix' => '/v1'], function () {
     Route::post('/register', 'UserController@register');
 
     Route::get('/logout/{api_token}', 'UserController@logout');
-    
-    
+
+
     //Login route
-    Route::post('/authenticate', 'JwtAuthenticateController@authenticate');  
-    
-    
+    Route::post('/authenticate', 'JwtAuthenticateController@authenticate');
+
+    // API route group that we need to protect
+    Route::group(['middleware' => ['ability:sadmin,create-users']], function() {
+        // Protected route
+        Route::post('/createusers', 'JwtAuthenticateController@createUser');
+    });
+
     // API route group that we need to protect
     Route::group(['middleware' => ['ability:sadmin,list-users']], function() {
-    // Protected route
-    Route::get('/users', 'JwtAuthenticateController@index');
+        // Protected route
+        Route::get('/users', 'JwtAuthenticateController@index');
     });
-    
+
     // API route group that we need to protect
     Route::group(['middleware' => ['ability:sadmin,create-roles']], function() {
-    // Protected route
-    Route::post('/createroles', 'JwtAuthenticateController@createRole');
+        // Protected route
+        Route::post('/createroles', 'JwtAuthenticateController@createRole');
     });
-    
+
     // API route group that we need to protect
     Route::group(['middleware' => ['ability:sadmin,create-permission']], function() {
-    // Route to create a new permission
-    Route::post('/permission', 'JwtAuthenticateController@createPermission');
+        // Route to create a new permission
+        Route::post('/permission', 'JwtAuthenticateController@createPermission');
     });
-    
+
     // API route group that we need to protect
     Route::group(['middleware' => ['ability:sadmin,assigne-roles']], function() {
-    // Route to assign role to user
-    Route::post('/assign-role', 'JwtAuthenticateController@assignRole');
+        // Route to assign role to user
+        Route::post('/assign-role', 'JwtAuthenticateController@assignRole');
     });
-    
+
     // API route group that we need to protect
     Route::group(['middleware' => ['ability:sadmin,assigne-permissions']], function() {
-    // Route to attache permission to a role
-    Route::post('/attach-permission', 'JwtAuthenticateController@attachPermission');
+        // Route to attache permission to a role
+        Route::post('/attach-permission', 'JwtAuthenticateController@attachPermission');
     });
-    
 });
 
 

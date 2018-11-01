@@ -164,4 +164,13 @@ class ApiController extends Controller{
 
         ]);
     }
+    
+    public function respondInternalErrors() {
+
+        return $this->respond([
+                    'status' => 'error',
+                    'status_code' => Res::HTTP_INTERNAL_SERVER_ERROR,
+                    'message' => 'Something Went Wrong Please Try Again Later!',
+        ]);
+    }
 }

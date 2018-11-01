@@ -271,5 +271,55 @@ class JwtAuthenticateController extends ApiController {
                     'message' => 'Permisson Assigned successful!'
         ]);
     }
+    
+    public function createUser(Request $request) {
+
+        $rules = array(
+            'firstname' => 'required|max:255|regex:/^[a-zA-Z ]*$/',
+            'lastname' => 'required|max:255|regex:/^[a-zA-Z ]*$/',
+            'mobile' => 'required|regex:/^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/|unique:user',
+            'email' => 'required|email|max:255|unique:user',
+            'password' => 'required|min:6',
+        );
+
+        $validator = Validator::make($request->all(), $rules);
+
+        if ($validator->fails()) {
+
+            return $this->respondValidationError('Fields Validation Failed.', $validator->errors());
+        } else {
+
+            //DB::enableQueryLog();
+            try {
+                $user = User::create([
+                            'username' => $request['firstname'],
+                            'first_name' => $request['firstname'],
+                            'last_name' => $request['lastname'],
+                            'mobile' => $request['mobile'],
+                            'email' => $request['email'],
+                            'role' => 3,
+                            'mobile_verify' => 1,
+                            'login_count' => 1,
+                            'status' => 10,
+                            'auth_key' => 'NULL',
+                            'password' => \Hash::make($request['password']),
+                            'password_hash' => \Hash::make($request['password']),
+                ]);
+            } catch (QueryException $e) {
+                Log::emergency($e);
+                return $this->respondInternalErrors();
+            } catch (\PDOException $e) {
+                Log::emergency($e);
+                return $this->respondInternalErrors();
+            }
+            //dd(DB::getQueryLog());
+
+            return $this->respond([
+                        'status' => 'success',
+                        'status_code' => Res::HTTP_OK,
+                        'message' => 'User Created SuccessFully!',
+            ]);
+        }
+    }
 
 }
