@@ -1,0 +1,12 @@
+{
+    "status": "success",
+    "status_code": 200,
+    "message": "Login successful!",
+    "data": {
+        "firstname": "Ramakanth",
+        "lastname": "Rapaka",
+        "phone": "9963034090",
+        "email": "ram_5478@yahoo.co.in",
+        "api_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjE2LCJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL3YxL2xvZ2luIiwiaWF0IjoxNTI1NDMxODE3LCJleHAiOjE1MjU0MzU0MTcsIm5iZiI6MTUyNTQzMTgxNywianRpIjoiVTdGQlhYMVFFUUNTTHYwUyJ9.Cd3Lb58eJDXdAmhWlBtWrKI0aOryhpBncHXqo4AjgVg"
+    }
+}

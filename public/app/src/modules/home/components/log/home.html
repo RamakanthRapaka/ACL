@@ -1,0 +1,58 @@
+<div class="clearfix"></div>
+<section id="admin-log" class="clearfix">
+    <div class="banner-overlay">
+        <div class="signupSection">
+            <div class="info">
+                <div class="log-inner-info">
+                    <!--<h2>CredRight</h2>-->
+                    <img src="app/src/common/img/credright_logo.png" alt="">
+                    <!--<i class="fa fa-outdent" aria-hidden="true"></i>-->
+                    <!--<p>The Future Is Here</p>-->
+                </div>
+            </div>
+            <div class="adminLoginForm">
+                <div class="logForm-content">
+                    <form class="log-form" name="adminLoginForm" ng-submit="adminLoginForm.$valid && submitForm()">
+                        <h2>Login</h2>
+                        <div class="form-content">
+                            <div class="form-row">
+                                <label for="email"></label>
+                                <input type="email" class="inputFields"
+                                       ng-pattern="/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/"
+                                       id="email" name="email" ng-model="log.email" placeholder="Email" value=""
+                                       required/>
+                                <div ng-messages="adminLoginForm.email.$error"
+                                     ng-show="adminLoginForm.email.$touched || adminLoginForm.$submitted"
+                                     md-auto-hide="false" role="alert">
+                                    <div ng-message="pattern">Please enter valid email.</div>
+                                    <div ng-message="required">Email is required</div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <label for="password"></label>
+                                <input type="password" ng-model="log.password" class="inputFields" id="password" name="password"
+                                       placeholder="Password"
+                                       value="" required/>
+                                <div ng-messages="adminLoginForm.password.$error"
+                                     ng-show="adminLoginForm.password.$touched || adminLoginForm.$submitted"
+                                     md-auto-hide="false" role="alert">
+                                    <div ng-message="required">Password is required</div>
+                                </div>
+                            </div>
+                            <div class="form-row log-btn">
+                                <input type="submit" id="join-btn" name="join" alt="Login" value="Login">
+                            </div>
+                        </div>
+
+
+                    </form>
+                    <div class="error-log pt-2">
+                        <p class="invalid-login" ng-if="invalidLog">{{invalidLog}}</p>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</section>

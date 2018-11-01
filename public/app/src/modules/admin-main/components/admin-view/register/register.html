@@ -1,0 +1,149 @@
+<div class="box-body card admin-register-card col-md-6">
+    <form class="log-form" name="adminRegisterForm" ng-submit="adminRegisterForm.$valid && submitForm()">
+        <!-- text input -->
+        <div class="form-row">
+            <div class="form-group col">
+                <label>Name</label>
+                <input type="text" class="form-control" name="name" ng-model="user.name" placeholder="Enter your name..." required>
+                <div class="text-danger" ng-messages="adminRegisterForm.name.$error"
+                     ng-show="adminRegisterForm.name.$touched || adminRegisterForm.$submitted"
+                     md-auto-hide="false" role="alert">
+                    <div ng-message="required">Name is required</div>
+                </div>
+            </div>
+            <div class="form-group col">
+                <label>Short name</label>
+                <input type="text" class="form-control" placeholder="Enter your shortName ..." ng-model="user.short_name" name="shortName" required/>
+                <div class="text-danger" ng-messages="adminRegisterForm.shortName.$error"
+                     ng-show="adminRegisterForm.shortName.$touched || adminRegisterForm.$submitted"
+                     md-auto-hide="false" role="alert">
+                    <div ng-message="required">Short name is required</div>
+                </div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col">
+                <label>Partner Email </label>
+                <input type="email" class="form-control" placeholder="Enter your partner email" ng-model="user.email" name="partnerEmail" required/>
+                <div class="text-danger" ng-messages="adminRegisterForm.partnerEmail.$error"
+                     ng-show="adminRegisterForm.partnerEmail.$touched || adminRegisterForm.$submitted"
+                     md-auto-hide="false" role="alert">
+                    <div ng-message="required">Partner email is required</div>
+                </div>
+            </div>
+            <div class="form-group col">
+                <label>Partner Phone Number </label>
+                <input type="text" class="form-control" placeholder="Enter your phone number ..." ng-model="user.phone_number" name="partnerPhone" required/>
+                <div class="text-danger" ng-messages="adminRegisterForm.partnerPhone.$error"
+                     ng-show="adminRegisterForm.partnerPhone.$touched || adminRegisterForm.$submitted"
+                     md-auto-hide="false" role="alert">
+                    <div ng-message="required">Partner phone is required</div>
+                </div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col">
+                <label>Password</label>
+                <input type="text" class="form-control" placeholder="Enter your Password ..." ng-model="user.password" name="password" required/>
+                <div class="text-danger" ng-messages="adminRegisterForm.password.$error"
+                     ng-show="adminRegisterForm.password.$touched || adminRegisterForm.$submitted"
+                     md-auto-hide="false" role="alert">
+                    <div ng-message="required">Password is required</div>
+                </div>
+            </div>
+
+        </div>
+        <div class="form-row">
+            <div class="form-group col">
+                <label>Textarea</label>
+                <textarea class="form-control" name="description" rows="3" placeholder="Description ..." ng-model="user.description" required></textarea>
+                <div class="text-danger" ng-messages="adminRegisterForm.description.$error"
+                     ng-show="adminRegisterForm.description.$touched || adminRegisterForm.$submitted"
+                     md-auto-hide="false" role="alert">
+                    <div ng-message="required">Description is required</div>
+                </div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col">
+                <label>Address Line1</label>
+                <input type="text" class="form-control" placeholder="Enter your address line 1 ..." ng-model="user.address_line_1" name="addressline1" required/>
+                <div class="text-danger" ng-messages="adminRegisterForm.addressline1.$error"
+                     ng-show="adminRegisterForm.addressline1.$touched || adminRegisterForm.$submitted"
+                     md-auto-hide="false" role="alert">
+                    <div ng-message="required">Address line1 is required</div>
+                </div>
+            </div>
+            <div class="form-group col">
+                <label>Address Line2</label>
+                <input type="text" class="form-control" placeholder="Enter your address line 2 ..." ng-model="user.address_line_2" name="addressline2" required/>
+                <div class="text-danger" ng-messages="adminRegisterForm.addressline2.$error"
+                     ng-show="adminRegisterForm.addressline2.$touched || adminRegisterForm.$submitted"
+                     md-auto-hide="false" role="alert">
+                    <div ng-message="required">Address line2 is required</div>
+                </div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col">
+                <label>Area</label>
+                <input type="text" class="form-control" placeholder="Enter your address area ..." ng-model="user.area" name="addressarea" required/>
+                <div class="text-danger" ng-messages="adminRegisterForm.addressarea.$error"
+                     ng-show="adminRegisterForm.addressarea.$touched || adminRegisterForm.$submitted"
+                     md-auto-hide="false" role="alert">
+                    <div ng-message="required">Address area is required</div>
+                </div>
+            </div>
+            <div class="form-group col">
+                <label>Land Mark</label>
+                <input type="text" class="form-control" placeholder="Enter your land mark ..." ng-model="user.landmark" name="landmark" required/>
+                <div class="text-danger" ng-messages="adminRegisterForm.landmark.$error"
+                     ng-show="adminRegisterForm.landmark.$touched || adminRegisterForm.$submitted"
+                     md-auto-hide="false" role="alert">
+                    <div ng-message="required">Landmark is required</div>
+                </div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col">
+                <label>City</label>
+                <input type="text" class="form-control" placeholder="Enter your city ..." ng-model="user.city" name="city" required/>
+                <div class="text-danger" ng-messages="adminRegisterForm.city.$error"
+                     ng-show="adminRegisterForm.city.$touched || adminRegisterForm.$submitted"
+                     md-auto-hide="false" role="alert">
+                    <div ng-message="required">City is required</div>
+                </div>
+            </div>
+            <div class="form-group col">
+                <label>State</label>
+                <input type="text" class="form-control" placeholder="Enter your state ..." ng-model="user.state" name="state" required/>
+                <div class="text-danger" ng-messages="adminRegisterForm.state.$error"
+                     ng-show="adminRegisterForm.state.$touched || adminRegisterForm.$submitted"
+                     md-auto-hide="false" role="alert">
+                    <div ng-message="required">State is required</div>
+                </div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col">
+                <label>Pincode</label>
+                <input type="text" class="form-control" placeholder="Enter your pincode ..."  ng-model="user.pincode" name="pincode" required/>
+                <div class="text-danger" ng-messages="adminRegisterForm.pincode.$error"
+                     ng-show="adminRegisterForm.pincode.$touched || adminRegisterForm.$submitted"
+                     md-auto-hide="false" role="alert">
+                    <div ng-message="required">Pincode is required</div>
+                </div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group">
+                <div id="dropzone" class="dropzone"></div>
+            </div>
+
+        </div>
+        <div class="form-group">
+            <input type="submit" id="submit-register" class="btn btn-register" name="join" alt="Register" value="Register">
+        </div>
+    </form>
+
+</div>

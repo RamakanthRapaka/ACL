@@ -1,0 +1,98 @@
+.signupSection {
+    background-repeat: no-repeat;
+    margin: auto;
+    width: 800px;
+    height: 450px;
+    text-align: center;
+    display: flex;
+    color: white;
+    box-shadow: 3px 10px 20px 5px rgba(0, 0, 0, .5);
+}
+.info {
+    width: 45%;
+    background-image: url("/app/src/common/img/log-left-1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-right: 5px solid rgba(30, 30, 30, .8);
+}
+.info h2 {
+    padding-top: 30px;
+    font-weight: 300;
+}
+.info p {
+    font-size: 18px;
+}
+.info .icon {
+    font-size: 8em;
+    padding: 20px 0;
+    color: rgba(10, 180, 180, 1);
+}
+.log-btn {
+    justify-content: center;
+}
+.adminLoginForm {
+    width: 70%;
+    padding: 30px 0;
+    background: rgba(20, 40, 40, .3);
+    transition: 0.2s;
+    background-image: url("/app/src/common/img/log-main-admin.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.adminLoginForm h2 {
+    font-weight: 300;
+}
+.inputFields {
+    margin: 15px 0;
+    font-size: 16px;
+    padding: 10px;
+    width: 250px;
+    border: 1px solid;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background: rgba(20, 20, 20, .2);
+    color: white;
+    outline: none;
+}
+.noBullet {
+    list-style-type: none;
+    padding: 0;
+}
+#join-btn {
+    border: 1px solid;
+    background: rgba(20, 20, 20, .6);
+    font-size: 18px;
+    color: white;
+    margin-top: 20px;
+    padding: 10px 50px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+#join-btn:hover {
+    background: rgba(20, 20, 20, .8);
+    padding: 10px 100px;
+}
+section#admin-log {
+    background-color: rgba(0, 0, 0, 0.4);
+    background-image: url("/app/src/common/img/background_admin_login.jpg");
+    /*background-image: url("/src/common/img/lod-side-2.jpg");*/
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+.banner-overlay {
+    height: 100vh;
+    display: flex;
+    width: 100%;
+    background-color: rgba(1,1,1,0.5);
+}
+.log-inner-info {
+    min-height: 100%;
+    background-color: rgba(20,20,20,0.4);
+    padding: 30px 0;
+}
+.form-content {
+    width: 50%;
+    margin: auto;
+}

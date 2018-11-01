@@ -1,0 +1,32 @@
+{
+  "investor":[
+    {
+      "partner_image": "src/common/img/f-img/associated-chit-fund.jpg",
+      "title": "Associated",
+      "value": "Associated"
+    }, {
+      "partner_image": "src/common/img/f-img/balussery.png",
+      "title": "balussery",
+      "value": "balussery"
+    }, {
+      "partner_image": "src/common/img/f-img/bhoosiri.png",
+      "title": "bhoosiri",
+      "value": "bhoosiri"
+    },
+    {
+      "partner_image": "src/common/img/f-img/scf.png",
+      "title": "scf",
+      "value": "scf"
+    },
+    {
+      "partner_image": "src/common/img/f-img/shriram.png",
+      "title": "shriram",
+      "value": "shriram"
+    },
+    {
+      "partner_image": "src/common/img/f-img/sudha.png",
+      "title": "sudha",
+      "value": "sudha"
+    }
+  ]
+}

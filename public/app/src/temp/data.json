@@ -1,0 +1,38 @@
+{
+    "chitInfo": {
+        "name": "Chiranjeevi",
+        "amount": 50000,
+        "chitName": "chit123",
+        "chitFund": "",
+        "chitContact": ""
+    },
+    "myInfo": {
+        "firstName": "Chiranjeevi",
+        "lastName": "muvva",
+        "fatherName": "mvn",
+        "dateofbirth": "10-06-1994",
+        "qualification": "Degree",
+        "pan": "12",
+        "aadhar": "12",
+        "idProofType": "Voter Id",
+        "idProofNumber": "12",
+        "dependents": 1,
+        "title":"Mr",
+        "marital":"Single"
+    },
+    "businessInfo": {
+        "businessType":"Manufacturing",
+        "industryType":"Manufacturing",
+        "nameOfTheFirm":"Manufacturing",
+        "otherIndustry":"Manufacturing",
+        "businessStart":"10-09-2011",
+        "managementExperience":"Less than 5 years",
+        "companyPanCard":"Less than 5 years",
+        "businessInsured":"No",
+        "businessPremises":"Owned",
+        "natureOfOwnership":"OwnSole proprietorshiped"
+    },
+    "step4": {},
+    "step5": {},
+    "step6": {}
+}
