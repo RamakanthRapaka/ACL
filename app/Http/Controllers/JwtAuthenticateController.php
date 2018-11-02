@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Permission;
 use App\Role;
 use App\User;
+use App\Investor;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -323,6 +324,52 @@ class JwtAuthenticateController extends ApiController {
     }
     
     public function partnersList(Request $request) {
+        
+        try {
+        $investors = Investor::all();
+        } catch (QueryException $e) {
+            Log::emergency($e);
+            return $this->respondInternalErrors();
+        } catch (\PDOException $e) {
+            Log::emergency($e);
+            return $this->respondInternalErrors();
+        }
+        
+        return $this->respond([
+                        'status' => 'success',
+                        'status_code' => Res::HTTP_OK,
+                        'message' => 'Investors List!',
+                        'data' => $investors
+            ]);
+        
+    }
+    
+    public function cteatePartner(Request $request) {
+        
+        
+        $rules = array(
+            'name' => 'required|max:255|regex:/^[a-zA-Z ]*$/',
+            'shortname' => 'sometimes|nullable|max:255|regex:/^[a-zA-Z ]*$/',
+            'partner_image' => 'sometimes|nullable|regex:/^data:image\/(\w+);base64,/',
+            'description' => 'sometimes|nullable|regex:/^[a-zA-Z0-9,.\-\ ]*$/',
+            'user_id' => 'sometimes|nullable|numeric',
+            'address_line_1' => 'sometimes|nullable|regex:/^[a-zA-Z0-9,.\-\ ]*$/',
+            'address_line_2' => 'sometimes|nullable|regex:/^[a-zA-Z0-9,.\-\ ]*$/',
+            'address_area' => 'sometimes|nullable|regex:/^[a-zA-Z0-9,.\-\ ]*$/',
+            'land_mark' => 'sometimes|nullable|regex:/^[a-zA-Z0-9,.\-\ ]*$/',
+            'city' => 'sometimes|nullable|regex:/^[a-zA-Z ]*$/',
+            'state' => 'sometimes|nullable|regex:/^[a-zA-Z ]*$/',
+            'pincode' => 'sometimes|nullable|numeric',
+            'isactive' => 'sometimes|nullable',
+            'ispartner' => 'sometimes|nullable|boolean',
+        );
+
+        $validator = Validator::make($request->all(), $rules);
+
+        if ($validator->fails()) {
+
+            return $this->respondValidationError('Fields Validation Failed.', $validator->errors());
+        }
         
         
     }

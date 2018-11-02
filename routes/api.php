@@ -40,7 +40,13 @@ Route::group(['middleware' => 'cors', 'prefix' => '/v1'], function () {
     // API route group that we need to protect
     Route::group(['middleware' => ['ability:sadmin,list-partners']], function() {
         // Protected route
-        Route::get('/partners', 'JwtAuthenticateController@partnersList');
+        Route::post('/partners', 'JwtAuthenticateController@partnersList');
+    });
+    
+    // API route group that we need to protect
+    Route::group(['middleware' => ['ability:sadmin,list-partners']], function() {
+        // Protected route
+        Route::post('/createpartner', 'JwtAuthenticateController@cteatePartner');
     });
 
     // API route group that we need to protect
