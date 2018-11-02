@@ -175,7 +175,7 @@ class JwtAuthenticateController extends ApiController {
     public function createRole(Request $request) {
         
         $rules = array(
-            'name' => 'required|unique:roles',
+            'role_name' => 'required|unique:role',
         );
 
         $validator = Validator::make($request->all(), $rules);
@@ -186,7 +186,7 @@ class JwtAuthenticateController extends ApiController {
         }
         
         $role = new Role();
-        $role->name = $request->input('name');
+        $role->role_name = $request->input('role_name');
         $role->save();
 
         return $this->respond([

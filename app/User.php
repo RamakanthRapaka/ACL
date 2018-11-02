@@ -31,4 +31,10 @@ class User extends Model implements AuthenticatableContract,
      * @var array
      */
     protected $hidden = ['password', 'password_reset_token', 'mobile_verify', 'role', 'login_count', 'status'];
+    
+    
+    public function setUpdatedAtAttribute($value)
+    {
+        return $this->attributes['updated_at'] = strtotime($value);
+    }
 }
