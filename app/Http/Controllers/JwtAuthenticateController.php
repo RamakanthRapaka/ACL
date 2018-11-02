@@ -23,6 +23,10 @@ use \Illuminate\Http\Response as Res;
 use Validator;
 use Illuminate\Database\QueryException as QueryException;
 
+use Image;
+use File;
+use Storage;
+
 class JwtAuthenticateController extends ApiController {
     
     /**
@@ -371,6 +375,30 @@ class JwtAuthenticateController extends ApiController {
             return $this->respondValidationError('Fields Validation Failed.', $validator->errors());
         }
         
+        $investor = new Investor;
+        
+        if (isset($request['partner_image'])) {
+
+            try {
+                $path_folder = public_path() . '/partners/'.$investor->id;
+                if (!File::exists($path_folder)) {
+                    $result = File::makeDirectory($path_folder, 0777);
+                }
+                $partner_url = $investor->id.'_' .time().".png";
+                $partner_path = $path_folder . '/' . $partner_url;
+            } catch (\Exception $e) {
+                Log::emergency($e);
+                return $this->respondInternalErrors();
+            }
+
+            try {
+                Image::make(file_get_contents($request['partner_image']))->save($partner_path);
+            } catch (\Exception $e) {
+                Log::emergency($e);
+                return $this->respondInternalErrors();
+            }
+            
+        }
         
     }
 
